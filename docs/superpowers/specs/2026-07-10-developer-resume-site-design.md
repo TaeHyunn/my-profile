@@ -226,7 +226,7 @@ Vue 중심 프론트엔드 엔지니어 조태현의 실무 경험을 채용 담
 - Vue 3
 - Vite
 - CSS 변수 기반 테마
-- 필요한 경우 Vue용 Phosphor 아이콘 사용
+- `@phosphor-icons/vue`
 - 정적 GitHub Pages 배포
 
 ### 컴포넌트
@@ -299,9 +299,10 @@ Vue 중심 프론트엔드 엔지니어 조태현의 실무 경험을 채용 담
 ## 13. 배포와 관리
 
 - 현재 `my-profile` Git 저장소에서 관리한다.
-- 구현 완료 후 개인 GitHub 계정 `TaeHyunn` 아래 저장소에 연결한다.
+- 구현 완료 후 개인 GitHub 저장소 `TaeHyunn/my-profile`에 연결한다.
 - 기본 브랜치에 푸시하면 GitHub Actions가 빌드하고 GitHub Pages에 배포한다.
-- 실제 원격 저장소 이름과 최종 Pages URL은 구현 완료 전에 사용자와 확인한다.
+- Vite의 배포 base 경로는 `/my-profile/`로 설정한다.
+- 기본 Pages URL은 `https://taehyunn.github.io/my-profile/`로 사용한다.
 
 ## 14. 완료 조건
 
