@@ -1,0 +1,122 @@
+@media print {
+  :root,
+  [data-theme="dark"] {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --surface-raised: #ffffff;
+    --surface-quiet: #f2f2f2;
+    --ink: #111111;
+    --muted: #454545;
+    --line: #c5c5c5;
+    --line-strong: #777777;
+    --accent: #111111;
+    --accent-soft: #eeeeee;
+  }
+
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    font-size: 9pt;
+  }
+
+  .site-header,
+  .hero-actions,
+  .system-visual,
+  .theme-toggle,
+  .menu-toggle,
+  .copyright {
+    display: none !important;
+  }
+
+  section,
+  footer {
+    width: 100%;
+    padding: 8mm 0 !important;
+    break-inside: avoid;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-section {
+    min-height: auto;
+    grid-template-columns: 1fr 36mm;
+  }
+
+  .portrait-frame {
+    box-shadow: none;
+  }
+
+  h1 {
+    margin-bottom: 4mm;
+    font-size: 30pt;
+  }
+
+  h2 {
+    font-size: 20pt;
+  }
+
+  h3,
+  .project-summary h3 {
+    font-size: 14pt;
+  }
+
+  .section-heading {
+    margin-bottom: 6mm;
+  }
+
+  .project-list {
+    gap: 8mm;
+  }
+
+  .project-case,
+  .project-resident,
+  .timeline-section,
+  .education-section,
+  .contact-section {
+    width: 100%;
+    margin: 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 7mm;
+    break-inside: avoid;
+  }
+
+  .project-resident .project-summary,
+  .project-resident .project-evidence {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  details > * {
+    display: block !important;
+  }
+
+  summary {
+    display: none !important;
+  }
+
+  .contribution-list {
+    padding-bottom: 0;
+  }
+
+  .skill-group {
+    min-height: auto;
+    padding: 5mm;
+  }
+
+  .contact-section {
+    min-height: auto;
+  }
+
+  a {
+    color: #111111;
+    text-decoration: none;
+  }
+}

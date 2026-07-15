@@ -14,6 +14,22 @@ defineProps({
       <p>커밋과 변경 파일로 확인된 기여만 프로젝트 사례로 정리했습니다.</p>
     </header>
 
+    <div class="system-visual" aria-label="관리자, 입주민, 경비원 제품 연결 구조">
+      <div class="system-node node-admin">
+        <span>관리</span>
+        <strong>운영 판단</strong>
+      </div>
+      <div class="system-node node-resident">
+        <span>생활</span>
+        <strong>모바일 경험</strong>
+      </div>
+      <div class="system-node node-guard">
+        <span>현장</span>
+        <strong>즉시 대응</strong>
+      </div>
+      <div class="system-core" aria-hidden="true">Vue</div>
+    </div>
+
     <div class="project-list">
       <article
         v-for="project in projects"

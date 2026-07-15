@@ -1,4 +1,6 @@
 <script setup>
+import profileAvatar from '@/assets/profile-avatar.jpg';
+
 defineProps({
   profile: {
     type: Object,
@@ -21,8 +23,16 @@ defineProps({
       </div>
     </div>
     <div class="hero-identity" aria-label="프로필 정보">
-      <div class="portrait-placeholder" aria-hidden="true">JT</div>
-      <div>
+      <div class="portrait-frame">
+        <img
+          :src="profileAvatar"
+          :alt="profile.avatarAlt"
+          width="460"
+          height="460"
+        />
+        <span aria-hidden="true">JT</span>
+      </div>
+      <div class="identity-caption">
         <strong>{{ profile.name }}</strong>
         <span>{{ profile.englishName }}</span>
       </div>

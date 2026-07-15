@@ -4,6 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5f7fb" />
+    <meta
+      name="description"
+      content="관리자웹, 입주민앱, 경비원웹을 개발하고 운영하는 Vue 프론트엔드 엔지니어 조태현의 이력서입니다."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="조태현 | Vue 프론트엔드 엔지니어" />
+    <meta
+      property="og:description"
+      content="현장의 복잡한 흐름을 안정적인 화면으로 바꾸는 프론트엔드 엔지니어"
+    />
+    <meta property="og:url" content="https://taehyunn.github.io/my-profile/" />
+    <meta name="twitter:card" content="summary" />
+    <script>
+      (() => {
+        const savedTheme = window.localStorage.getItem('profile-theme');
+        const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light';
+        document.documentElement.dataset.theme = savedTheme || preferredTheme;
+      })();
+    </script>
     <title>조태현 | Vue 프론트엔드 엔지니어</title>
   </head>
   <body>
