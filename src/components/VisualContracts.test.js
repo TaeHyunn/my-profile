@@ -15,6 +15,7 @@ describe('visual system contracts', () => {
     expect(base).toContain('[data-theme="dark"]');
     expect(base).toContain('prefers-reduced-motion');
     expect(sections).toContain('@media (max-width: 767px)');
+    expect(sections).toMatch(/\.hero-section h1\s*{[^}]*text-wrap:\s*pretty/s);
     expect(print).toContain('@media print');
   });
 });

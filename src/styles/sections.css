@@ -8,6 +8,11 @@
   align-items: end;
 }
 
+.hero-section h1 {
+  font-size: clamp(3rem, 5.1vw, 4.7rem);
+  text-wrap: pretty;
+}
+
 .hero-role {
   display: flex;
   margin-bottom: 24px;
