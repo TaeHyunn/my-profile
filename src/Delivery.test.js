@@ -8,7 +8,10 @@ const readProjectFile = (path) =>
 
 describe('delivery setup', () => {
   it('builds for the repository subpath', () => {
-    expect(readProjectFile('vite.config.js')).toContain("base: '/my-profile/'");
+    const viteConfig = readProjectFile('vite.config.js');
+
+    expect(viteConfig).toContain("base: '/my-profile/'");
+    expect(viteConfig).toContain("'.worktrees/**'");
   });
 
   it('verifies and deploys the site with GitHub Pages', () => {
