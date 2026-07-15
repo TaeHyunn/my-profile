@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test": "vitest",
+    "test": "NODE_OPTIONS=--no-experimental-webstorage vitest",
     "lint": "eslint .",
     "build": "vite build",
     "preview": "vite preview"
