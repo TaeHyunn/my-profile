@@ -24,6 +24,21 @@ describe('resume sections', () => {
     expect(wrapper.findAll('[data-project]').length).toBe(3);
   });
 
+  it('moves the primary action to the beginning of the work experience', () => {
+    const wrapper = mount(App);
+
+    expect(wrapper.get('.hero-actions .button-primary').attributes('href')).toBe(
+      '#experience',
+    );
+  });
+
+  it('renders the product ecosystem as three non-overlapping tracks', () => {
+    const wrapper = mount(App);
+
+    expect(wrapper.findAll('.system-track')).toHaveLength(3);
+    expect(wrapper.get('.system-core').text()).toContain('Vue 3');
+  });
+
   it('renders safe public contact links', () => {
     const wrapper = mount(App);
     const github = wrapper.get('a[href="https://github.com/TaeHyunn"]');

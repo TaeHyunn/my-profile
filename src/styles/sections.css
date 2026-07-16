@@ -169,88 +169,109 @@
 .system-visual {
   position: relative;
   display: grid;
-  overflow: hidden;
-  min-height: 390px;
   margin-bottom: clamp(72px, 10vw, 130px);
-  padding: clamp(28px, 5vw, 64px);
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  gap: 10px;
-  border: 1px solid var(--line);
+  padding: clamp(34px, 5vw, 64px);
+  grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(42px, 7vw, 92px);
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(circle at 70% 34%, var(--accent-soft), transparent 28%),
+    radial-gradient(circle at 14% 18%, var(--accent-soft), transparent 28%),
     var(--surface);
-  box-shadow: var(--shadow);
 }
 
-.system-visual::before,
-.system-visual::after {
+.system-core {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--line);
+  padding-right: clamp(28px, 4vw, 54px);
+}
+
+.system-core span {
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 760;
+  letter-spacing: 0.04em;
+}
+
+.system-core strong {
+  margin-bottom: 20px;
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+}
+
+.system-core p {
+  max-width: 310px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.system-tracks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.system-track {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  padding: 24px 0;
+  grid-template-columns: 42px minmax(110px, 0.55fr) minmax(0, 1fr);
+  gap: clamp(14px, 2vw, 30px);
+  align-items: center;
+  border-top: 1px solid var(--line);
+}
+
+.system-track:first-child {
+  border-top-color: var(--ink);
+}
+
+.system-track::before {
   position: absolute;
-  z-index: 0;
+  top: -4px;
+  left: -3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
   background: var(--accent);
   content: "";
-  opacity: 0.72;
 }
 
-.system-visual::before {
-  top: 50%;
-  right: 14%;
-  left: 14%;
-  height: 1px;
+.track-index {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 780;
+  font-variant-numeric: tabular-nums;
 }
 
-.system-visual::after {
-  top: 14%;
-  bottom: 14%;
-  left: 58%;
-  width: 1px;
+.system-track div {
+  display: grid;
+  min-width: 0;
 }
 
-.system-node,
-.system-core {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  padding: 20px;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid var(--line-strong);
-  background: color-mix(in srgb, var(--surface-raised) 92%, transparent);
-}
-
-.system-node span {
+.system-track small {
   color: var(--muted);
-  font-size: 0.74rem;
-  font-weight: 700;
+  font-size: 0.7rem;
 }
 
-.system-node strong {
-  font-size: clamp(1.05rem, 1.7vw, 1.45rem);
-  line-height: 1.25;
+.system-track strong {
+  overflow-wrap: anywhere;
+  font-size: clamp(1rem, 1.7vw, 1.35rem);
+  letter-spacing: -0.035em;
 }
 
-.node-admin {
-  grid-area: 1 / 1 / 4 / 5;
-}
-
-.node-resident {
-  grid-area: 1 / 8 / 5 / 13;
-}
-
-.node-guard {
-  grid-area: 4 / 3 / 7 / 8;
-}
-
-.system-core {
-  grid-area: 3 / 6 / 5 / 9;
-  align-items: center;
-  justify-content: center;
-  border-color: var(--accent);
-  color: var(--accent-ink);
-  background: var(--accent);
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
+.system-track p {
+  min-width: 0;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
 }
 
 .project-list {
@@ -640,43 +661,24 @@ details[open] summary::after {
   }
 
   .system-visual {
-    min-height: 470px;
-    padding: 20px;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-  }
-
-  .system-visual::before {
-    top: 12%;
-    bottom: 12%;
-    left: 50%;
-    width: 1px;
-    height: auto;
-  }
-
-  .system-visual::after {
-    top: 56%;
-    right: 12%;
-    bottom: auto;
-    left: 12%;
-    width: auto;
-    height: 1px;
-  }
-
-  .node-admin {
-    grid-area: 1 / 1 / 4 / 5;
-  }
-
-  .node-resident {
-    grid-area: 4 / 3 / 8 / 7;
-  }
-
-  .node-guard {
-    grid-area: 8 / 1 / 11 / 5;
+    padding: 30px 20px 18px;
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 
   .system-core {
-    grid-area: 5 / 1 / 7 / 3;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 0 0 32px;
+  }
+
+  .system-track {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .system-track > p {
+    grid-column: 2;
   }
 
   .project-resident .project-summary,

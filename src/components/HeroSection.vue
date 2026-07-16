@@ -16,7 +16,7 @@ defineProps({
       <h1 id="hero-title">{{ profile.headline }}</h1>
       <p class="hero-introduction">{{ profile.introduction }}</p>
       <div class="hero-actions" aria-label="주요 링크">
-        <a class="button button-primary" href="#projects">경력 보기</a>
+        <a class="button button-primary" href="#experience">경력 보기</a>
         <a class="button button-secondary" :href="`mailto:${profile.email}`">
           이메일
         </a>
