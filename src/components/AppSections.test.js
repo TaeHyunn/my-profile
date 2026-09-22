@@ -15,28 +15,28 @@ describe('resume sections', () => {
     );
   });
 
-  it('renders the three product case studies', () => {
+  it('renders six chronological project records as a resume document', () => {
     const wrapper = mount(App);
 
     expect(wrapper.text()).toContain('관리자웹');
     expect(wrapper.text()).toContain('입주민앱');
     expect(wrapper.text()).toContain('경비원웹');
-    expect(wrapper.findAll('[data-project]').length).toBe(3);
+    expect(wrapper.findAll('[data-project]')).toHaveLength(6);
+    expect(wrapper.find('.system-visual').exists()).toBe(false);
+    expect(wrapper.find('details').exists()).toBe(false);
   });
 
-  it('moves the primary action to the beginning of the work experience', () => {
+  it('keeps the work experience link at the start of the section', () => {
     const wrapper = mount(App);
 
-    expect(wrapper.get('.hero-actions .button-primary').attributes('href')).toBe(
-      '#experience',
-    );
+    expect(wrapper.get('a[href="#experience"]').exists()).toBe(true);
   });
 
-  it('renders the product ecosystem as three non-overlapping tracks', () => {
+  it('does not render a profile photo or theme control', () => {
     const wrapper = mount(App);
 
-    expect(wrapper.findAll('.system-track')).toHaveLength(3);
-    expect(wrapper.get('.system-core').text()).toContain('Vue 3');
+    expect(wrapper.find('img').exists()).toBe(false);
+    expect(wrapper.find('.theme-toggle').exists()).toBe(false);
   });
 
   it('renders safe public contact links', () => {

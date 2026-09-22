@@ -8,22 +8,18 @@ defineProps({
 </script>
 
 <template>
-  <section
-    id="experience"
-    class="experience-section"
-    aria-labelledby="experience-title"
-  >
-    <header class="section-heading">
-      <h2 id="experience-title">실무에서 제품을 끝까지 다룹니다.</h2>
-      <p>{{ experience.summary }}</p>
-    </header>
+  <section id="experience" class="resume-section" aria-labelledby="experience-title">
+    <h2 id="experience-title">경력</h2>
     <article class="experience-record">
-      <div class="experience-meta">
-        <p class="company-name">{{ experience.company }}</p>
-        <p>{{ experience.role }}</p>
+      <div class="record-heading">
+        <div>
+          <h3>{{ experience.company }}</h3>
+          <p>{{ experience.role }}</p>
+        </div>
         <time>{{ experience.period }}</time>
       </div>
-      <ul class="experience-focus">
+      <p class="record-summary">{{ experience.summary }}</p>
+      <ul class="plain-list">
         <li v-for="item in experience.focus" :key="item">{{ item }}</li>
       </ul>
     </article>

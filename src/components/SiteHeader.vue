@@ -1,8 +1,6 @@
 <script setup>
-import { PhList, PhX } from '@phosphor-icons/vue';
+import { PhList, PhPrinter, PhX } from '@phosphor-icons/vue';
 import { ref } from 'vue';
-
-import ThemeToggle from './ThemeToggle.vue';
 
 defineProps({
   navigation: {
@@ -12,10 +10,10 @@ defineProps({
 });
 
 const menuOpen = ref(false);
-
 const closeMenu = () => {
   menuOpen.value = false;
 };
+const printResume = () => window.print();
 </script>
 
 <template>
@@ -24,19 +22,17 @@ const closeMenu = () => {
       조태현
     </a>
     <nav class="site-navigation" aria-label="주요 메뉴" :data-open="menuOpen">
-      <a
-        v-for="item in navigation"
-        :key="item.href"
-        :href="item.href"
-        @click="closeMenu"
-      >
+      <a v-for="item in navigation" :key="item.href" :href="item.href" @click="closeMenu">
         {{ item.label }}
       </a>
     </nav>
     <div class="header-actions">
-      <ThemeToggle />
+      <button class="print-button" type="button" data-print-resume @click="printResume">
+        <PhPrinter :size="17" aria-hidden="true" />
+        PDF로 저장
+      </button>
       <button
-        class="icon-button menu-toggle"
+        class="menu-toggle"
         type="button"
         data-menu-toggle
         :aria-expanded="menuOpen"

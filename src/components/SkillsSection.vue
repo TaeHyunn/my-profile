@@ -8,18 +8,13 @@ defineProps({
 </script>
 
 <template>
-  <section id="skills" class="skills-section" aria-labelledby="skills-title">
-    <header class="section-heading">
-      <h2 id="skills-title">기술은 사용 맥락으로 설명합니다.</h2>
-    </header>
-    <div class="skill-groups">
-      <article v-for="group in groups" :key="group.title" class="skill-group">
-        <h3>{{ group.title }}</h3>
-        <p>{{ group.description }}</p>
-        <ul>
-          <li v-for="skill in group.skills" :key="skill">{{ skill }}</li>
-        </ul>
-      </article>
-    </div>
+  <section id="skills" class="resume-section skills-section" aria-labelledby="skills-title">
+    <h2 id="skills-title">기술</h2>
+    <dl class="skill-list">
+      <div v-for="group in groups" :key="group.title">
+        <dt>{{ group.title }}</dt>
+        <dd>{{ group.skills.join(', ') }}</dd>
+      </div>
+    </dl>
   </section>
 </template>

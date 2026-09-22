@@ -1,118 +1,104 @@
 @media print {
-  :root,
-  [data-theme="dark"] {
-    --page: #ffffff;
-    --surface: #ffffff;
-    --surface-raised: #ffffff;
-    --surface-quiet: #f2f2f2;
-    --ink: #111111;
-    --muted: #454545;
-    --line: #c5c5c5;
-    --line-strong: #777777;
-    --accent: #111111;
-    --accent-soft: #eeeeee;
-  }
-
   @page {
     size: A4;
     margin: 14mm;
   }
 
+  :root {
+    --page: #ffffff;
+    --paper: #ffffff;
+    --ink: #111111;
+    --muted: #444444;
+    --line: #c9c9c9;
+    --accent: #111111;
+    --gutter: 0;
+  }
+
   html,
   body {
     background: #ffffff !important;
-    font-size: 9pt;
+    font-size: 9.2pt;
   }
 
   .site-header,
-  .hero-actions,
-  .system-visual,
-  .theme-toggle,
-  .menu-toggle,
-  .copyright {
+  [data-print-resume] {
     display: none !important;
   }
 
-  section,
-  footer {
+  .resume-document {
     width: 100%;
-    padding: 8mm 0 !important;
-    break-inside: avoid;
-  }
-
-  .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .hero-section {
     min-height: auto;
-    grid-template-columns: 1fr 36mm;
-  }
-
-  .portrait-frame {
+    padding: 0;
     box-shadow: none;
   }
 
+  .hero-section {
+    padding: 0 0 7mm;
+  }
+
   h1 {
-    margin-bottom: 4mm;
-    font-size: 30pt;
+    font-size: 28pt;
   }
 
   h2 {
-    font-size: 20pt;
+    font-size: 12pt;
   }
 
-  h3,
-  .project-summary h3 {
-    font-size: 14pt;
+  h3 {
+    font-size: 10.5pt;
   }
 
-  .section-heading {
+  .hero-headline {
+    font-size: 12pt;
+  }
+
+  .hero-introduction {
+    max-width: none;
+    margin-bottom: 4mm;
+  }
+
+  .resume-section {
+    padding: 7mm 0;
+    grid-template-columns: 28mm minmax(0, 1fr);
+    gap: 7mm;
+    scroll-margin-top: 0;
+  }
+
+  .projects-section {
+    display: block;
+  }
+
+  .projects-section > h2 {
     margin-bottom: 6mm;
   }
 
-  .project-list {
-    gap: 8mm;
-  }
-
-  .project-case,
-  .project-resident,
-  .timeline-section,
-  .education-section,
-  .contact-section {
-    width: 100%;
-    margin: 0;
-    grid-template-columns: 1fr 1fr;
-    gap: 7mm;
+  .project-record {
+    padding-bottom: 6mm;
+    grid-template-columns: 28mm minmax(0, 1fr);
+    gap: 6mm;
     break-inside: avoid;
   }
 
-  .project-resident .project-summary,
-  .project-resident .project-evidence {
-    grid-row: auto;
-    grid-column: auto;
+  .project-record + .project-record {
+    padding-top: 6mm;
   }
 
-  details > * {
-    display: block !important;
+  .plain-list li + li {
+    margin-top: 1.5mm;
   }
 
-  summary {
-    display: none !important;
+  .technology-line {
+    margin-top: 3mm;
   }
 
-  .contribution-list {
-    padding-bottom: 0;
-  }
-
-  .skill-group {
-    min-height: auto;
-    padding: 5mm;
+  .education-list article,
+  .experience-record,
+  .skill-list > div {
+    break-inside: avoid;
   }
 
   .contact-section {
-    min-height: auto;
+    padding-top: 5mm;
   }
 
   a {
